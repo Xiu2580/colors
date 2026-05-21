@@ -7,7 +7,7 @@ export function getData() {
 }
 
 export async function loadData() {
-  const resp = await fetch('/colors_organized.json');
+  const resp = await fetch(import.meta.env.BASE_URL + 'colors_organized.json');
   if (!resp.ok) throw new Error('HTTP ' + resp.status);
   const json = await resp.json();
 
