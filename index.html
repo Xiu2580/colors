@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Color App - 色彩世界</title>
+  <link rel="stylesheet" href="/src/css/theme.css">
+  <link rel="stylesheet" href="/src/css/base.css">
+  <link rel="stylesheet" href="/src/css/topbar.css">
+  <link rel="stylesheet" href="/src/css/immersive.css">
+  <link rel="stylesheet" href="/src/css/browse.css">
+  <link rel="stylesheet" href="/src/css/modal.css">
+  <link rel="stylesheet" href="/src/css/responsive.css">
+</head>
+<body data-theme="dark">
+
+<!-- Top Bar -->
+<div class="top-bar" id="topBar">
+  <div class="mode-tabs">
+    <button class="mode-tab active" data-mode="immersive">&#9671; 沉浸</button>
+    <button class="mode-tab" data-mode="browse">&#9641; 浏览</button>
+  </div>
+  <div class="spacer"></div>
+  <span class="stat" id="topStat"></span>
+  <button class="btn-icon" id="btnTheme" title="深色/浅色">&#9788;</button>
+</div>
+
+<!-- Immersive View -->
+<div class="immersive-view" id="immersiveView">
+  <main class="immersive-main" id="iMain">
+    <div class="loading-state" id="iLoading"><div class="loading-spinner"></div><p style="margin-top:1rem;color:var(--text2);font-size:.85rem">加载色彩数据...</p></div>
+    <div class="itop-hint" id="iTopHint">
+      <span class="src-tag" id="iSourceTag"></span>
+      <span><span class="key">&#8592;</span> <span class="key">&#8594;</span> 导航 <span class="key">K</span> 搜索</span>
+    </div>
+    <div class="ihero">
+      <div class="jp-name" id="iHeroName"></div>
+      <div class="en-name" id="iHeroEn"></div>
+      <div class="hex-display" id="iHeroHex"></div>
+    </div>
+    <div class="ivalues" id="iValues"></div>
+    <div class="isimilar" id="iSimilar"></div>
+    <div class="igradient-strip" id="iGradientStrip" style="display:none"></div>
+  </main>
+
+  <!-- Floating UI -->
+  <div class="fp-overlay" id="fpOverlay"></div>
+  <div class="float-panel" id="floatPanel">
+    <div class="fp-head">
+      <span><span class="fph-title">色彩集</span><span class="fph-count" id="fpCount"></span></span>
+      <button class="fph-close" id="fpClose">&times;</button>
+    </div>
+    <div class="ps-wrap"><span class="ps-icon">&#128269;</span><input type="text" id="fpSearch" placeholder="搜索颜色名称..."></div>
+    <div class="pf-tags" id="fpFamilyTags"></div>
+    <div class="pcolor-list" id="fpColorList"></div>
+  </div>
+  <div class="float-btn" id="floatBtn">
+    <div class="fb-dot" id="fbDot"></div>
+    <div class="fb-ring"></div>
+  </div>
+</div>
+
+<!-- Browse View -->
+<div class="browse-view" id="browseView" style="display:none">
+  <div class="browse-scroll">
+    <div class="btoolbar" id="bToolbar">
+      <div class="bstabs-inline" id="bSectionTabs">
+        <button class="bstab-i active" data-section="colors">纯色</button>
+        <button class="bstab-i" data-section="gradients">渐变</button>
+      </div>
+      <div class="bsearch-wrap">
+        <span class="bsicon">&#128269;</span>
+        <input type="text" id="bSearchInput" placeholder="搜索名称、HEX值...">
+      </div>
+      <button class="bbtn bbtn-icon active" id="bBtnGrid" title="网格">&#9638;</button>
+      <button class="bbtn bbtn-icon" id="bBtnList" title="列表">&#9776;</button>
+      <button class="bbtn bbtn-icon" id="bBtnSpectrum" title="光谱">&#9728;</button>
+      <select class="bsort" id="bSort">
+        <option value="default">默认排序</option>
+        <option value="hue">色相排序</option>
+        <option value="lightness">明度排序</option>
+        <option value="saturation">饱和度排序</option>
+        <option value="name">名称排序</option>
+      </select>
+      <span style="color:var(--text3);font-size:.7rem;white-space:nowrap" id="bStat"></span>
+    </div>
+    <div class="bfilters" id="bFilters"></div>
+    <div id="bGradientFilters" style="display:none;padding:2px 12px;flex-wrap:nowrap;gap:4px;justify-content:center;background:var(--bg4);border-bottom:1px solid var(--border);height:28px;overflow-x:auto"></div>
+    <div class="bcontent" id="bContent"></div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal-overlay" id="modalOverlay"><div class="modal" id="modal"></div></div>
+
+<!-- Toast & Tooltip -->
+<div class="toast" id="toast"></div>
+<div class="spec-tooltip" id="specTooltip"></div>
+
+<script type="module" src="/src/main.js"></script>
+</body>
+</html>

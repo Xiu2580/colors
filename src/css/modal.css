@@ -1,0 +1,247 @@
+/* ===== Modal ===== */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: var(--modal-overlay);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .3s;
+}
+
+.modal-overlay.show {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.modal {
+  background: var(--bg4);
+  border-radius: 14px;
+  padding: 1.2rem;
+  max-width: 480px;
+  width: 92%;
+  max-height: 88vh;
+  overflow-y: auto;
+  position: relative;
+  border: 1px solid var(--border);
+  box-shadow: 0 20px 60px var(--shadow);
+}
+
+.modal-close {
+  position: absolute;
+  top: .5rem;
+  right: .7rem;
+  background: none;
+  border: none;
+  color: var(--text2);
+  font-size: 1.3rem;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background .2s;
+}
+
+.modal-close:hover {
+  background: var(--bg3);
+}
+
+.modal-swatch {
+  width: 100%;
+  height: 140px;
+  border-radius: 10px;
+  margin-bottom: .8rem;
+  position: relative;
+}
+
+.modal-swatch .swatch-badge {
+  position: absolute;
+  bottom: .5rem;
+  left: .5rem;
+  right: .5rem;
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+
+.modal-swatch .swatch-badge span {
+  padding: 3px 8px;
+  border-radius: 9px;
+  font-size: .68rem;
+  background: rgba(0, 0, 0, .5);
+  color: #fff;
+  backdrop-filter: blur(4px);
+}
+
+.modal-nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, .4);
+  color: #fff;
+  border: none;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background .2s;
+}
+
+.modal-nav-btn:hover {
+  background: rgba(0, 0, 0, .7);
+}
+
+.modal-nav-btn.prev {
+  left: .4rem;
+}
+
+.modal-nav-btn.next {
+  right: .4rem;
+}
+
+.modal-title {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: .5rem;
+  color: var(--text);
+}
+
+/* Horizontal tag chips for HEX/RGB/HSL/CMYK */
+.modal-value-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-bottom: .8rem;
+}
+
+.modal-value-chip {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 5px 10px;
+  border-radius: 8px;
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  cursor: pointer;
+  transition: background .15s, border-color .15s;
+}
+
+.modal-value-chip:hover {
+  background: var(--bg);
+  border-color: var(--accent);
+}
+
+.modal-value-chip .vlabel {
+  font-size: .62rem;
+  color: var(--text3);
+  font-weight: 600;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+
+.modal-value-chip .vvalue {
+  font-family: 'SF Mono', Consolas, monospace;
+  font-size: .74rem;
+  color: var(--text);
+}
+
+.modal-value-chip .vcopy-icon {
+  font-size: .7rem;
+  color: var(--text3);
+  opacity: .6;
+  transition: opacity .15s, color .15s;
+}
+
+.modal-value-chip:hover .vcopy-icon {
+  opacity: 1;
+  color: var(--accent);
+}
+
+.modal-section-title {
+  font-size: .74rem;
+  font-weight: 600;
+  color: var(--text2);
+  margin: .5rem 0 .35rem;
+}
+
+.modal-similar {
+  display: flex;
+  gap: 5px;
+}
+
+.modal-similar .ms {
+  flex: 1;
+  height: 40px;
+  border-radius: 8px;
+  cursor: pointer;
+  position: relative;
+  transition: transform .15s;
+  min-width: 0;
+}
+
+.modal-similar .ms:hover {
+  transform: scale(1.08);
+}
+
+.modal-similar .ms .mshex {
+  position: absolute;
+  bottom: 2px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: .6rem;
+  font-family: 'SF Mono', Consolas, monospace;
+  color: #fff;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, .75);
+}
+
+/* Action buttons */
+.modal-actions {
+  display: flex;
+  gap: 6px;
+  margin-top: .8rem;
+}
+
+.modal-action-btn {
+  flex: 1;
+  padding: 7px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--bg3);
+  color: var(--text2);
+  cursor: pointer;
+  font-size: .74rem;
+  font-family: system-ui, sans-serif;
+  transition: all .15s;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.modal-action-btn:hover {
+  background: var(--bg);
+  border-color: var(--accent);
+  color: var(--text);
+}
+
+.modal-action-btn.primary {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.modal-action-btn.primary:hover {
+  background: var(--accent);
+  color: #fff;
+}

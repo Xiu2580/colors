@@ -1,0 +1,75 @@
+/* ===== Top Bar ===== */
+.top-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 12px;
+  background: var(--bg5);
+  border-bottom: 1px solid var(--border);
+  font-size: .78rem;
+  transition: background .3s;
+}
+
+.mode-tabs {
+  display: flex;
+  gap: 2px;
+}
+
+.mode-tab {
+  padding: 6px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--text2);
+  font-size: .8rem;
+  transition: all .15s;
+  font-family: system-ui, sans-serif;
+}
+
+.mode-tab:hover {
+  background: var(--bg3);
+}
+
+.mode-tab.active {
+  background: var(--accent);
+  color: #fff;
+  font-weight: 600;
+}
+
+.top-bar .spacer {
+  flex: 1;
+}
+
+.top-bar .stat {
+  color: var(--text3);
+  font-size: .7rem;
+  white-space: nowrap;
+}
+
+.btn-icon {
+  padding: 5px 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text2);
+  font-size: .85rem;
+  transition: all .15s;
+}
+
+.btn-icon:hover {
+  background: var(--bg3);
+  color: var(--text);
+}
+
+.btn-icon.active {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}

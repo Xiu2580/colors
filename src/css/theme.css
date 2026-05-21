@@ -1,0 +1,32 @@
+/* ===== Theme Variables ===== */
+:root {
+  --bg: #0a0a0f;
+  --bg2: #0f0f14;
+  --bg3: #16161e;
+  --bg4: #12121a;
+  --bg5: #1a1a24;
+  --text: rgba(255, 255, 255, .93);
+  --text2: rgba(255, 255, 255, .60);
+  --text3: rgba(255, 255, 255, .36);
+  --accent: #34d399;
+  --border: rgba(255, 255, 255, .08);
+  --shadow: rgba(0, 0, 0, .55);
+  --toast-bg: #16161e;
+  --modal-overlay: rgba(0, 0, 0, .82);
+}
+
+[data-theme="light"] {
+  --bg: #f8f9fa;
+  --bg2: #ffffff;
+  --bg3: #e9ecef;
+  --bg4: #f0f0f3;
+  --bg5: #e8e8ec;
+  --text: rgba(0, 0, 0, .88);
+  --text2: rgba(0, 0, 0, .55);
+  --text3: rgba(0, 0, 0, .28);
+  --accent: #0d9488;
+  --border: rgba(0, 0, 0, .08);
+  --shadow: rgba(0, 0, 0, .08);
+  --toast-bg: #0d9488;
+  --modal-overlay: rgba(0, 0, 0, .40);
+}
