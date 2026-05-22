@@ -167,6 +167,7 @@ export function bindEvents() {
     const btn = e.target.closest('.bfilter-btn');
     if (!btn) return;
     updateState({ gradientSource: btn.dataset.source });
+    renderBGradientSourceTabs();
     renderBGradients();
     writeHash(state);
   });
