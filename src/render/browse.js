@@ -93,6 +93,8 @@ export function renderBrowse() {
   document.getElementById('bSort').value = state.sort;
 
   const isGrad = state.section === 'gradients';
+  document.getElementById('bFilters').style.display = isGrad ? 'none' : '';
+  document.getElementById('bGradientFilters').style.display = isGrad ? 'flex' : 'none';
   document.getElementById('bBtnGrid').style.display = isGrad ? 'none' : '';
   document.getElementById('bBtnList').style.display = isGrad ? 'none' : '';
   document.getElementById('bBtnSpectrum').style.display = isGrad ? 'none' : '';

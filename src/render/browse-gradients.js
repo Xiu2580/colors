@@ -15,7 +15,6 @@ export function renderBGradientSourceTabs() {
   }
   const el = document.getElementById('bGradientFilters');
   el.innerHTML = html;
-  el.style.display = state.section === 'gradients' ? 'flex' : 'none';
 }
 
 export function renderBGradients() {
